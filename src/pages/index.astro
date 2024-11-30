@@ -1,0 +1,56 @@
+---
+import Tabs from './components/Tabs.svelte';
+import Fut from './components/Fut';
+import  '../styles/globals.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebSocket con ESP32</title>
+  </head>
+  <body>
+    <Fut />
+    <!-- <div id="container">
+      <h1>Cliente WebSocket para ESP32</h1>
+      <button id="connectButton">Conectar al ESP32</button>
+      <button id="sendMessageButton" disabled>Enviar Mensaje</button>
+      <p id="status">Estado: Desconectado</p>
+      <p id="response">Respuesta:</p>
+    </div> -->
+
+     <!-- <script type="module">
+      let socket;
+
+      document.getElementById('connectButton').addEventListener('click', () => {
+        if (!socket || socket.readyState !== WebSocket.OPEN) {
+          socket = new WebSocket('ws://192.168.0.107:81'); // Reemplaza <ESP32_IP> con la IP del ESP32
+            console.log(socket);
+          socket.onopen = () => {
+            document.getElementById('status').innerText = 'Estado: Conectado';
+            document.getElementById('sendMessageButton').disabled = false;
+          };
+
+          socket.onmessage = (event) => {
+            console.log('Mensaje del ESP32:', event.data);
+            document.getElementById('response').innerText = `Respuesta: ${event.data}`;
+          };
+
+          socket.onclose = () => {
+            document.getElementById('status').innerText = 'Estado: Desconectado';
+            document.getElementById('sendMessageButton').disabled = true;
+          };
+        }
+      });
+
+      document.getElementById('sendMessageButton').addEventListener('click', () => {
+        if (socket && socket.readyState === WebSocket.OPEN) {
+          const message = JSON.stringify({ action: "solicitarDatos" });
+          socket.send(message);
+        }
+      });
+    </script> -->
+    
+  </body>
+</html>
